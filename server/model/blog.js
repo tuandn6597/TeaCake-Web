@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 mongoose.Promise =global.Promise;
-var json = require("../data/blog");
+
 
 var blog = new Schema({
     title   : String,

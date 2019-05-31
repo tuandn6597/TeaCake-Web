@@ -1,8 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 mongoose.Promise =global.Promise;
-var ObjectId = Schema.Types.ObjectId,
-    json = require('../data/sanpham');
+var ObjectId = Schema.Types.ObjectId;
 
 var sanpham = new Schema({
     name: String,

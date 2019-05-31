@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 mongoose.Promise =global.Promise;
-var json = require('../data/loaikhachhang.json');
+
 var loai_khachhang = new Schema({
    type:String,
    id_cus:String
