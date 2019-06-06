@@ -9,7 +9,7 @@ const persistedState = loadState();
 const store=createStore(
     rootReducer,
     persistedState,
-    applyMiddleware(logger,thunk)
+    applyMiddleware(thunk)
 )
 //json.stringify thường được gọi liên tục, để khắc phục điều đó ta sử dụng throttle (function này giúp cho hàm sẽ chỉ gọi 1 lần mỗi x giây)
   store.subscribe(throttle(() => {
