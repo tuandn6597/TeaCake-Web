@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import {  NavLink } from 'react-router-dom';
 class MenuAbout extends Component {
     render() {
         return (
@@ -11,7 +11,7 @@ class MenuAbout extends Component {
                     <span className="subheading" style={{fontFamily:'Pacifico' ,color:'#c49b63',display: 'block',lineHeight:'1',marginBottom: '-48px',fontSize:'48px'}}>Discover</span>
                     <h2 className="mb-4" style={{ fontSize: '40px', fontWeight: '700', position: 'relative', textTransform: 'uppercase', fontFamily: 'sans-serif',color:'#fff'}}>Our Menu</h2>
                     <p className="mb-4" style ={{color:'gray',fontFamily:'"Montserrat", "Helvetica Neue", Arial, sans-serif'}}>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                    <p><a href="/menu" className="btn btn-primary btn-outline-primary px-4 py-3">View Full Menu</a></p>
+                    <p><li><NavLink to="/menu" className="btn btn-primary btn-outline-primary px-4 py-3">View Full Menu</NavLink></li></p>
                   </div>
                 </div>
                 <div className="col-md-6">

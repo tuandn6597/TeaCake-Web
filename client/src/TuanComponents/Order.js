@@ -6,16 +6,25 @@ import InfoCart from './InfoCart';
 import {connect} from 'react-redux';
 import { getTypeProduct } from '../actions/typeProduct';
 //
-import { Link, Element , Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import {  Element , animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import InfoCartResponsive from './InfoCartResponsive';
+import { addToCart } from '../actions/cart';
 class Order extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
-    
+    componentWillMount(){
+        if(this.props.location.product){
+         
+          this.props.addCart(this.props.location.product.name,this.props.location.product.price,1,this.props.location.product._id);
+           
+        }
+    }
     render() { 
-        
+     
+        console.log(this.props.location.product);
+
         return ( 
             <div>
               
@@ -51,7 +60,8 @@ class Order extends Component {
     }
 }
  const mapDispatchToProps=dispatch=>({
-     getType:()=>dispatch(getTypeProduct())
+     getType:()=>dispatch(getTypeProduct()),
+     addCart:(name,price,amount,_id)=>dispatch(addToCart(name,price,amount,_id))
  })
  const mapStateToProps=state=>({
     types:state.types

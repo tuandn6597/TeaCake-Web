@@ -15,10 +15,10 @@ class Contact extends Component{
                             <h3>contact details</h3>
                             <p>Dont be shy do contact us about everything and anything, we will be glad to answer your questions about kataleya.</p>
                             <ul className="contact-info">
-                              <li><i className="fa fa-home" />51/39, Đường số 10, phường Linh Chiểu, Quận Thủ Đức</li>
-                              <li><i className="fa fa-phone" />Phone: +84337 011 110</li>
-                              <li><i className="fa fa-print" />Fax: +386 10 555 66677</li>
-                              <li><i className="fa fa-envelope" />Email: <a href="mailto:khoale9098@gmail.com">khoale9098@gmail.com</a></li>
+                              <li><i className="fa fa-home" />Dĩ An, Bình Dương</li>
+                              <li><i className="fa fa-phone" />Phone: +0346083862</li>
+                              <li><i className="fa fa-print" />Fax: +0346083862</li>
+                              <li><i className="fa fa-envelope" />Email: <a href="mailto:tuandn6597@gmail.com">tuandn6597@gmail.com</a></li>
                             </ul>
                           </div>
                           <div className="col-md-6">

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { NavLink } from 'react-router-dom';
 class Slider extends Component {
     render() {
         return (
@@ -10,7 +10,12 @@ class Slider extends Component {
                             <span className="subheading" style={{fontFamily: 'Pacifico',fontSize: '30px',color: '#c49b63'}}>Welcome</span>
                             <h1 className="mb-4" style={{color:	'#FFFFFF'}}>Amazing Taste &amp; Beautiful Place</h1>
                             <p className="mb-4 mb-md-5"style={{color:'#FFFFFF'}}>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                            <p><a href="#" className="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" className="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
+                            <p>
+                                <ul>
+                                <li><NavLink to="/order" className="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</NavLink></li>
+                                <li> <NavLink to="/menu" className="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</NavLink></li>
+                                 </ul>
+                            </p>
                         </div>
                     </div>
                 </div>

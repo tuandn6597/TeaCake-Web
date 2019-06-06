@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import swal from 'sweetalert';
+
 import {  NavLink } from "react-router-dom";
 import axios from 'axios';
 class AllMenu extends Component {
@@ -114,9 +114,9 @@ class AllMenu extends Component {
                                                         <div className="text text-center pt-4">
                                                             <h4><a href="product-single.html" style={{ color: '#c49b63', fontWeight: '100', textTransform: 'uppercase', fontFamily: '"Montserrat", "Helvetica Neue", Arial, sans-serif', fontSize: '0.7em' }}>{prd.name}</a></h4>
                                                             {/* <p>{ prd.describe }</p> */}
-                                                            <p className="price"><h5><span style={{ color: '#fff', fontSize: '16px', fontFamily: '"Bebas Neue","Lato", sans-serif', fontWeight: '700' }} >{prd.price} VND</span></h5></p>
+                                                            <p className="price"><h5><span style={{ color: 'rgb(196, 155, 99)', fontSize: '16px', fontFamily: '"Bebas Neue","Lato", sans-serif', fontWeight: '700' }} >{prd.price} VND</span></h5></p>
                                                          {/* <li><a href="#" className="btn btn-primary btn-outline-primary" style={{ color: '#c49b63', fontFamily: '"Montserrat", "Helvetica Neue", Arial, sans-serif' }}>Buy Now</a></li> */}
-                                                         <li><NavLink to="/order" className="btn btn-primary btn-outline-primary" style={{ color: '#c49b63', fontFamily: '"Montserrat", "Helvetica Neue", Arial, sans-serif' }}>Mua Ngay</NavLink></li>
+                                                         <li><NavLink to={{pathname:'/order',product:prd}} className="btn btn-primary btn-outline-primary" style={{ color: '#c49b63', fontFamily: '"Montserrat", "Helvetica Neue", Arial, sans-serif' }}>Mua Ngay</NavLink></li>
                                                         </div>
                                                     </div>
                                                 </div>

@@ -1,15 +1,25 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-    mongoose.Promise =global.Promise;
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 
-var user = new Schema({
-    email: String,
-    password: String
+// Create Schema
+const UserSchema = new Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  }
+ 
 });
-var User = mongoose.model('user',user);
-module.exports = User;
-
-// User.insertMany(json, function(err){
-//     if(err) console.log(err);
-// })
+module.exports = User = mongoose.model("admins", UserSchema);

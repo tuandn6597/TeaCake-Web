@@ -77,7 +77,11 @@ class FormCustomer extends Component {
             {errors.desc && touched.desc && <div id="feedback" className="alert alert-danger">{errors.desc}</div>}
            
             <div>
-                <input type="submit" value="Đặt Hàng" className="btn btn-success"/>
+              {this.props.cart.length>0
+              ? ( <input type="submit" value="Đặt Hàng" className="btn btn-success i-order"/>)
+              :(<div className="alert alert-danger"><strong>Bạn không thể đặt hàng</strong> Giỏ hàng của bạn không có sản phẩm , xem menu để thêm sản phẩm</div>)
+              }
+               
             </div>
         </div>
         {this.props.status ?(
@@ -130,4 +134,7 @@ const MyEnhancedForm = withFormik({
   const mapDispatchToProps=(dispatch)=>({
     saveBill:(bill)=>dispatch(saveBill(bill))
   })
-export default connect(null,mapDispatchToProps)(MyEnhancedForm);
+  const mapStateToProps=state=>({
+    cart:state.cart
+  })
+export default connect(mapStateToProps,mapDispatchToProps)(MyEnhancedForm);

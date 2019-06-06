@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from './components/header';
+
 import SliderBlog from './components/blog/sliderBlog';
 import Contact from './components/contact';
 import BlogContent from './components/blog/blogContent';

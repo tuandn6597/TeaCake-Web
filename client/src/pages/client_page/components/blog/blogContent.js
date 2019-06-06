@@ -11,6 +11,7 @@ class BlogContent extends Component {
             blogs: [],
             blog: [],
             show: false,
+            currentBlog:{}
 
         };
 
@@ -34,28 +35,29 @@ class BlogContent extends Component {
     componentDidMount() {
         this.getBlogs();
     }
-    openBlog = (id) => {
-        this.setState({ show: true });
-        axios.get('/api/blogs')
-            .then(result => {
-                console.log(result.data)
-                let giatritimdc = result.data.find((value) => {
-                    return value._id === id;
-                })
-                this.setState({ blog: giatritimdc })
-                console.log(giatritimdc)
-            })
+    openBlog = (blog) => {
+        this.setState({
+             show: true,
+             currentBlog:blog
+        
+        });
     }
     render() {
         return (
             <section className="style-2">
                 <div className="container">
-
+               
+                    <div className="row">
+                        <div className="col-md-12">
+                            <h2 id="menu" className="section-heading text-center" style={{ color: '#c49b63' }}>Blog</h2>
+                        </div>
+                    </div>
+             
                     {this.state.blogs.map(prd =>
                         <div className="blog-loop columns masonry" >
                             <article className="col-md-4 col-sm-6">
-                                {/* <header className="text-center"><a onClick={this.handleShow} ><img src={prd.imageURL} /> */}
-                                <header className="text-center"><a onClick={() => this.openBlog(prd._id)} ><img src={prd.imageURL} />
+
+                                <header className="text-center"><a onClick={() => this.openBlog(prd)} ><img src={prd.imageURL} />
                                     <div className="hover">
                                         <div className="day">22</div>
                                         <div className="month">Mar</div>
@@ -74,30 +76,30 @@ class BlogContent extends Component {
                         <section className="blog-single">
                             <div className="container">
                                 <div className="row">
-                                    {this.state.blogs.map(val =>
+                                 
                                         <div className="col-md-9">
                                             <article >
                                                 <header>
-                                                    <h2 style={{ textTransform: 'lowercase' }}>{val.title}</h2>
-                                                    <a href="#"><img style={{ width: '100%', height: '350px' }} src={val.imageURL} alt="Blog post 1" /></a>
+                                                    <h2 style={{ textTransform: 'lowercase' }}>{this.state.currentBlog.title}</h2>
+                                                    <a href="#"><img style={{ width: '100%', height: '350px' }} src={this.state.currentBlog.imageURL} alt="Blog post 1" /></a>
                                                     <div className="post-meta">
                                                         <ul>
                                                             <li><i className="fa fa-user" />posted by Admin</li>
                                                             <li><i className="fa fa-calendar-o" />2019</li>
-                                                            <li><i className="fa fa-folder-o" /><a href="#">Carrer </a>/ <a href="#">Photography </a>/ <a href="#">Post</a></li>
+                                                            {/* <li><i className="fa fa-folder-o" /><a href="#">Carrer </a>/ <a href="#">Photography </a>/ <a href="#">Post</a></li> */}
                                                         </ul>
                                                     </div>
                                                 </header>
-                                                <p>{val.content}</p>
+                                                <p>{this.state.currentBlog.content}</p>
                                                 <div className="author">
                                                     <div>
-                                                        <h4>about author <span className="color">{val.author}</span></h4>
+                                                        <h4>about author <span className="color">{this.state.currentBlog.author}</span></h4>
 
                                                     </div>
                                                 </div>
                                             </article>
                                         </div>
-                                    )}
+                                 
                                 </div>
                             </div>
                         </section>

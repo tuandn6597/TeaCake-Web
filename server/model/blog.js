@@ -13,6 +13,3 @@ var blog = new Schema({
 var Blog =  mongoose.model('blog',blog);
 module.exports = Blog;
 
-// Blog.insertMany(json, function(err){
-//     if(err) console.log(err);
-// })

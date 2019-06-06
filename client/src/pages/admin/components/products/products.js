@@ -76,6 +76,7 @@ class Products extends Component{
         })
     };
     alertDelete = (id) =>{
+     
         swal({
             title: "Are you sure?",
             text: "Once deleted, you will not be able to recover!",
@@ -95,6 +96,7 @@ class Products extends Component{
     }
     
     sendIdtoModal = async(id) =>{
+      
         await fetch('/api/products/get/' + id,{
             method:'get',
             headers: { 'Content-Type': 'application/json'}
@@ -174,9 +176,9 @@ class Products extends Component{
                                                     <td> <img src = { prd.image } alt="ProductImage" width="50px"/> </td>
                                                     <td> { prd.price } đ</td>
                                                     <td className="product_control text-right">
-                                                        <a href="#repair" onClick={() => this.sendIdtoModal(prd._id)}><i className="fas fa-pen" ></i></a>
+                                                        <p onClick={() => this.sendIdtoModal(prd._id)}><i className="fas fa-pen" ></i></p>
                                                         {/* <a href="#delete" onClick={ () => this.deleteProd(prd._id) }><i className="fa fa-trash-alt"></i></a> */}
-                                                        <a href="#delete" onClick={ () => this.alertDelete(prd._id) }><i className="fas fa-trash-alt"></i></a>
+                                                        <p  onClick={ () => this.alertDelete(prd._id) }><i className="fas fa-trash-alt"></i></p>
                                                     </td>
                                                 </tr>
                                             )}

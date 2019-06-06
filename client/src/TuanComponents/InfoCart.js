@@ -9,12 +9,24 @@ class InfoCart extends Component {
         this.state = {  }
     }
     render() {      
+        console.log(this.props)
         return ( 
            
             <div className="card position-fixed cart-fixed">
             <div className="card-body">
               <h5 className="card-title text-center">Your Cart</h5>
-             <li> <NavLink to="/payment" className="btn btn-success btn-lg" style={{    width: '100%',fontSize:'13px',fontFamily:'Tobato'}}>Xem giỏ hàng</NavLink>
+             <li>
+                 {this.props.cart.length>0 && this.props.url !=='/payment'
+                     ?( <NavLink
+                        to="/payment"
+                     className="btn btn-success btn-lg"
+                      style={{    width: '100%',fontSize:'13px',fontFamily:'Tobato'}}>
+                          Xem giỏ hàng
+                     </NavLink>)
+                     :""
+                     
+                }
+                 
              </li>
               <hr/>
               {this.props.cart.map((item,index)=>(<div key={index}>

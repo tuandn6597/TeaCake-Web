@@ -8,33 +8,25 @@ class Header extends Component{
             <header className="site-header">
                 <div className="container">
                     <div className="row">
-                        <div className="site-logo retina pull-left">
-                            <a href="index.html"><img src="../images/logo.png" width="160" alt="Logo"/></a>
-                        </div>
-                        <nav role="navigation" className="navbar pull-right" style={{padding: '0', margin: '0'}}>
-                            <div className="navbar-header">
-                                <button type="button" data-toggle="collapse" data-target=".site-navigation" className="navbar-toggle"><span className="sr-only">Toggle navigation</span><span className="fa fa-bars"></span></button>
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-change">
+                           <li><NavLink class="navbar-brand" to="/"><img src="../images/logo.png" width="160" alt="Logo"/></NavLink></li>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                <ul class="navbar-nav ml-auto menu-change">
+                                    <li><NavLink to="/" className="link">home</NavLink></li>
+                                    <li><NavLink to="/menu" className="link">menu</NavLink></li>
+                                    <li><NavLink to="/blog" className="link">blog</NavLink></li>
+                                    <li><NavLink to="/about" className="link">about</NavLink></li>                                 
+                                    <li><NavLink to='/contact' className="link">contact</NavLink></li>
+                                    <li><NavLink to='/payment'><IconCart /></NavLink></li>
+                                    {/* <li><NavLink to ="/login" className="fa fa-user" style={{color:'white'}} aria-hidden="true"></NavLink></li> */}
+                               
+                                </ul>
                             </div>
-                            <ul className="site-navigation">
-                                <li className="active"><a href="#home">home</a></li>
-                                <li><a href="/menu">menu</a>
-                                    {/* <ul className="sub-menu">
-                                        <li><a href="elements.html">elements</a></li>
-                                        <li><a href="portfolio.html">portfolio</a></li>
-                                        <li><a href="404.html">error 404</a></li>
-                                        <li><a href="search.html">search page</a></li>
-                                        <li><a href="coming-soon.html" target="_blank">coming soon</a></li>
-                                    </ul> */}
-                                </li>
-                                <li><a href="/blog">blog</a></li>
-                                <li><a href="/about">about</a></li>
-                                <li><a href="#reservation">reservation</a></li>
-                                
-                                <li><a href="#contact">contact</a></li>
-                                <li><NavLink to='/payment'><IconCart /></NavLink></li>
-                                <li><a href ="/login" className="fa fa-user" style={{color:'white'}} aria-hidden="true"></a></li>
-                            </ul>
-                        </nav>
+                            </nav>
+                       
                     </div>
                 </div>
           </header>

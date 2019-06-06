@@ -3,6 +3,7 @@ var Schema = mongoose.Schema;
 mongoose.Promise =global.Promise;
 var ObjectId = Schema.Types.ObjectId;
 
+
 var sanpham = new Schema({
     name: String,
     describe: String,
@@ -13,6 +14,3 @@ var sanpham = new Schema({
 var sp = mongoose.model('sanpham',sanpham);
 module.exports = sp;
 
-// sp.insertMany(json, function(err){
-//     if(err) console.log(err);
-// })

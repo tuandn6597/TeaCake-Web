@@ -113,3 +113,77 @@ ul >li.list-group-item.menuleft-1:hover{
     top: 0;
     right: -20px;
 }
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.nav-change{
+    background-color:transparent !important;
+}
+ul.navbar-nav.ml-auto.menu-change li{
+    
+padding:0 15px;
+position: relative;
+}
+
+ul.navbar-nav.ml-auto.menu-change li a {
+    text-decoration: none;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    position: relative;
+}
+ul.navbar-nav.ml-auto.menu-change li a.link.active::after{
+    position: absolute;
+    content:'';
+    width: 100%;
+    height:3px;
+    background: red;
+    right: 0;
+    display: block;
+    transition: width .2s ease;
+    -webkit-transition: width .2s ease;
+}
+.link{
+    position: relative;
+}
+.link::after{
+    position: absolute;
+    content:'';
+    width: 0px;
+    height:3px;
+    background: red;
+    right: 0;
+    display: block;
+    transition: width .2s ease;
+    -webkit-transition: width .2s ease;
+}
+.link:hover::after{
+    width: 100%;
+    left:0;
+ 
+}
+@media screen and (max-width: 991px){
+    .navbar {
+        padding: 0;
+        width: 100% !important;
+      
+    }
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.nav-change{
+        background-color:#000000a9 !important
+    }
+    ul.navbar-nav.ml-auto.menu-change li a{
+        color:white !important;
+    }
+    ul.navbar-nav.ml-auto.menu-change{
+        text-align: center;
+        background-color:#000000a9;
+    }
+    .navbar.navbar-transparent{
+        border-bottom: none !important;
+    }
+}
+.navbar.navbar-transparent{
+    border-bottom: none !important;
+}
+
+
+.i-order{
+    font-family: 'Times New Roman', Times, serif !important;
+}
